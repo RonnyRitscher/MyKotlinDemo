@@ -4,9 +4,9 @@ package de.proneucon.mykotlindemo
  *  PROGRAMIERSPRACHE KOTLIN
  *
  *  kleine Einblicke in die Programmiersprache Kotlin
- *  - weniger Code als in Java
- *
+ *  -> weniger Code als in Java
  *  -> kann auf alle Funktionalitäten aus Java zugreifen (bis auf einige Außnahmen...)
+ *  -> baut auf Java6 auf, nicht alle Funktionen aus Java8 verwendbar
  *
  *  UNERSCHIEDE von KOTLIN zu JAVA
  *  keine Methoden

@@ -1,5 +1,6 @@
 package de.proneucon.mykotlindemo
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_show_lists.*
@@ -24,6 +25,13 @@ class ShowListeActivity : AppCompatActivity() {
         val twoDimArray = Array(10 ,{i-> IntArray(10 , {it-> it+1})})      //Mehrdimensionales Arrays
         val twoDimArray2 = Array(10 ,{i-> IntArray(10 , {it+1})})      //Mehrdimensionales Array
 
+        val name = "hallo" + 123
+        //val name2 = 123 + "hallo"   ->Nicht möglich
+
+        //Button  ..-> weiterleitung zur nächsten Activity
+        btn_next2.setOnClickListener {
+            startActivity(Intent(this@ShowListeActivity , NullSafety::class.java))
+        }
 
         //************************************************************
         //Daten Auslesen von Arrays:
@@ -69,10 +77,35 @@ class ShowListeActivity : AppCompatActivity() {
         val max2 = if(zahl1 > zahl2) zahl1 else zahl2   //Vereinfachte Schreibweise
         val max3 = maxValue( zahl1,  zahl2)             //Aufruf über eine externe Methode/Funktion (maxValue)
         tv_output_showList.append("MAX-VALUE von $zahl1 und $zahl2: " +max.toString())
+        tv_output_showList.append("\n")
+
+        //FOR()-SCHLEIFEN************************************************************
+        //Rückwärts ausgeben
+        for(i in numbers2.size-1 downTo 0){   // Abwärts auf dem Array mit downTo  43210
+            tv_output_showList.append(" : $i ")
+        }
+        tv_output_showList.append("\n")
+
+        //Auch die schrittweite kann angegeben werden
+        for(i in numbers2.size-1 downTo 0 step 2){   // Abwärts auf dem Array mit downTo  420
+            tv_output_showList.append(" : $i ")
+        }
+        tv_output_showList.append("\n")
+
+        //Auch in eigen definierte Werte:
+        for(i in 2..100 step 2){
+            tv_output_showList.append("$i ")
+        }
+
+        //EIGENE METHODEN*****************************************************
+        //Beispiel für SWITCH mit WHEN... (EIGENE FUNKTION siehe unten)
+        checkValue(1)
+        checkValue("hallo")
+        tv_output_showList.append("\n")
 
     }
 
-    //Eigene Funktion/Methode:
+    //EIGENE FUNKTIONEN/METHODEN:*!*!*!*!*!*!**!*!*!*!*!**!*!*!*!**!*!*!*!**!*!*!*!**!*!*!*!**!*!*
     //MAX-VALUE ERMITTELN:
     fun maxValue(zahl1:Int , zahl2:Int)= if(zahl1 > zahl2) zahl1 else zahl2
 
@@ -82,6 +115,18 @@ class ShowListeActivity : AppCompatActivity() {
             zahl1                               // "return" kann weggelassen werden, wenn er vor dem if() platziert wird
         }else{
             zahl2
+        }
+    }
+
+    //Beispiel für Switch mit When
+    // - wenn er den Wert gefunden hat, dann bricht er an (wie break)
+    fun checkValue(zahl:Any){    // Any: jedes Objekt kann hereingesteckt werden :: Int: nur Integer kann verwendet werden
+        when(zahl){
+            0        -> tv_output_showList.append("Wert ist Null \n")   // Case
+            in 1..17 -> tv_output_showList.append("Jünger als 18 \n")   // Abfrage ob Wert kleiner als 18 (von..bis)
+            18,19,20 -> tv_output_showList.append("Der Wert ist 18,19 oder 20 \n")  //mehrere caseAbfragen angeben m it ","
+            "hallo"  -> tv_output_showList.append("Die Angabe ist: Hallo \n")  //Bei Strings angabe von ANY
+            else     -> tv_output_showList.append("Wert ist Undefiniert \n")
         }
     }
 }

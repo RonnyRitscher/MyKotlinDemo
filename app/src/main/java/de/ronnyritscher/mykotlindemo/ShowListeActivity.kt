@@ -1,4 +1,4 @@
-package de.proneucon.mykotlindemo
+package de.ronnyritscher.mykotlindemo
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity

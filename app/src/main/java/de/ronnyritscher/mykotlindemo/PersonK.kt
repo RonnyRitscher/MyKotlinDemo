@@ -1,4 +1,4 @@
-package de.proneucon.mykotlindemo
+package de.ronnyritscher.mykotlindemo
 /**
  * Beispiel unterschied der Klassen PersonJ.java und PersonK.kt
  * Angelegte PERSON in KOTLIN

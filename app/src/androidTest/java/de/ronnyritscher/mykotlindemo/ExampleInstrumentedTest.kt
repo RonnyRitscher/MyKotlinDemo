@@ -1,4 +1,4 @@
-package de.proneucon.mykotlindemo
+package de.ronnyritscher.mykotlindemo
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

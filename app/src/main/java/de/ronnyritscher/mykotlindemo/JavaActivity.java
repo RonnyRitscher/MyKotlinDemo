@@ -1,4 +1,4 @@
-package de.proneucon.mykotlindemo;
+package de.ronnyritscher.mykotlindemo;
 
 /**
  * zeigt das man auch Java in Kotlin verwenden kann

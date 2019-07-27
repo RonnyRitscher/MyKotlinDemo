@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="de.proneucon.mykotlindemo">
+    package="de.ronnyritscher.mykotlindemo">
 
     <application
         android:allowBackup="true"
@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NullSafety" />
-        <activity android:name=".ShowListeActivity"/>
-        <activity android:name=".OutputActivity" />
+        <activity android:name="de.ronnyritscher.mykotlindemo.NullSafety" />
+        <activity android:name="de.ronnyritscher.mykotlindemo.ShowListeActivity"/>
+        <activity android:name="de.ronnyritscher.mykotlindemo.OutputActivity" />
 
-        <activity android:name=".MainActivity">
+        <activity android:name="de.ronnyritscher.mykotlindemo.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
